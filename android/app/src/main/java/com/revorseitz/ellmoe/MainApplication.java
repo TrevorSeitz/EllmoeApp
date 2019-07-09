@@ -1,4 +1,4 @@
-package com.invertase.rnfirebasestarter;
+package com.revorseitz.ellmoe;
 
 import android.support.multidex.MultiDexApplication;
 
