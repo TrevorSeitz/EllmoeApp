@@ -6,10 +6,12 @@ import {
   CameraRoll,
   FlatList,
   Dimensions,
-  Button
+  Button,
+  FileSystem
 } from "react-native";
-import { FileSystem } from "expo";
+// import { FileSystem } from "expo";
 import ImageTile from "./ImageTile";
+
 const { width } = Dimensions.get("window");
 
 export default class ImageBrowser extends React.Component {

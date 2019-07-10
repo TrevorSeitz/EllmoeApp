@@ -4,12 +4,13 @@ import {
   ScrollView,
   ActivityIndicator,
   View,
-  AsyncStorage
+  AsyncStorage,
+  Font
 } from "react-native";
 import { ListItem, Avatar } from "react-native-elements";
 import * as firebase from 'react-native-firebase';
 //import firestore from "firebase/firestore";
-import { Font } from "expo";
+// import { Font } from "expo";
 
 export default class ListLocationsScreen extends React.Component {
   constructor() {

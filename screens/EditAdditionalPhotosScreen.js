@@ -8,14 +8,16 @@ import {
   Dimensions,
   AsyncStorage,
   ActivityIndicator,
-  Image
+  Image,
+  FileSystem
 } from "react-native";
-import { FileSystem } from "expo";
+// import { FileSystem } from "expo";
 import { Button } from "react-native-elements";
+import * as firebase from 'react-native-firebase';
 import ImageTile from "./ImageTile";
 import AdditionalPhotosTile from "./AdditionalPhotosTile";
-import * as firebase from 'react-native-firebase';
 import AdditionalImageBrowser from "./AdditionalImageBrowser";
+// Components
 import SaveMainPhoto from "../components/SaveMainPhoto";
 
 const { width } = Dimensions.get("window");

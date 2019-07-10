@@ -4,9 +4,10 @@ import {
   View,
   Dimensions,
   Image,
-  TouchableOpacity
+  TouchableOpacity,
+  ScreenOrientation
 } from "react-native";
-import { ScreenOrientation } from "expo";
+// import { ScreenOrientation } from "expo";
 import * as Icon from 'react-native-vector-icons'
 import * as firebase from 'react-native-firebase';
 
