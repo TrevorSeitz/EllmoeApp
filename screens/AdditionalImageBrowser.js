@@ -9,10 +9,11 @@ import {
   CameraRoll,
   FlatList,
   Dimensions,
-  AsyncStorage
+  AsyncStorage,
+  Location
 } from "react-native";
 import { Button } from "react-native-elements";
-import * as Location from 'expo-location'
+// import * as Location from 'expo-location'
 import ImageTile from "./ImageTile";
 import * as firebase from 'react-native-firebase';
 

@@ -8,18 +8,24 @@ import {
   TouchableOpacity,
   Alert,
   Text,
-  AsyncStorage
+  AsyncStorage,
+  Font,
+  MediaLibrary,
+  ImagePicker,
+  ImageManipulator,
+  Permissions,
+  Location
 } from "react-native";
 import { TextInput } from "react-native-paper";
 import { Button } from "react-native-elements";
 import * as firebase from 'react-native-firebase';
 //import firestore from "firebase/firestore";
-import { Font } from "expo";
-import * as MediaLibrary from 'expo-media-library'
-import * as ImagePicker from 'expo-image-picker'
-import * as ImageManipulator from 'expo-image-manipulator'
-import * as Permissions from 'expo-permissions'
-import * as Location from 'expo-location'
+// import { Font } from "expo";
+// import * as MediaLibrary from 'expo-media-library'
+// import * as ImagePicker from 'expo-image-picker'
+// import * as ImageManipulator from 'expo-image-manipulator'
+// import * as Permissions from 'expo-permissions'
+// import * as Location from 'expo-location'
 
 export default class ProfileScreen extends React.Component {
   static navigationOptions = {
