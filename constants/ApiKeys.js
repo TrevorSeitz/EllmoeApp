@@ -13,7 +13,7 @@ const firebaseConfig = {
   messagingSenderId: "774360750184"
 };
 
-firebase.initializeApp(firebaseConfig);
+// firebase.initializeApp(firebaseConfig);
 
 firebase.firestore().settings(settings);
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Platform, Image, Text, View, ScrollView, Button } from 'react-native';
+import { StyleSheet, Platform, Image, Text, View, ScrollView, Button, Constants } from 'react-native';
 import { createAppContainer } from "react-navigation";
 import ApiKeys from "./constants/ApiKeys";
 import firebase from 'react-native-firebase';
@@ -10,9 +10,20 @@ import LoginSwitchNavigator from "./navigation/switches/LoginSwitchNavigator";
 import AppSwitchNavigator from "./navigation/switches/AppSwitchNavigator";
 
 export default class App extends React.Component {
-  constructor() {
-    super();
-    this.state = {};
+  constructor(props) {
+    super(props);
+    this.unsubscriber = null
+    this.state = {
+      switchValue: false,
+      isLoadingComplete: false,
+      isAuthenticationReady: false,
+      isAuthenticated: false,
+      latatude: 0,
+      longitude: 0,
+      user: null,
+      uid: ""
+    };
+    this._ismounted = false;
   }
 
   async componentDidMount() {
@@ -21,87 +32,61 @@ export default class App extends React.Component {
     // console.warn('User -> ', user.toJSON());
 
     // await firebase.analytics().logEvent('foo', { bar: '123'});
+
+    this.authListener();
+    // this.getCurrentLocation()
+    this._ismounted = true;
   }
 
+
+  getCurrentLocation = async () => {
+    const location = await GetCurrentLocation()
+    this.setState({ latitude: location.coords.latitude,
+                    longitude: location.coords.longitude})
+  }
+
+  componentWillUnmount() {
+    this._ismounted = false;
+  }
+
+  authListener() {
+    firebase.auth().onAuthStateChanged(user => {
+      if (user) {
+        this._storeData(user);
+        this.setState({ user, uid: user.uid });
+      } else {
+        this.setState({ user: null });
+      }
+    });
+  }
+
+  _storeData = async user => {
+    try {
+        await AsyncStorage.multiSet([["uid", user.uid], ["latitude", this.state.latitude], ["longitude", this.state.longitude] ]);
+    } catch (error) {}
+  };
+
   render() {
+    const user = this.state.user;
+    // return (
     return (
-      <ScrollView>
-        <View style={styles.container}>
-          <Image source={require('./assets/ReactNativeFirebase.png')} style={[styles.logo]}/>
-          <Text style={styles.welcome}>
-            Welcome to {'\n'} React Native Firebase
-          </Text>
-          <Text style={styles.instructions}>
-            To get started, edit App.js
-          </Text>
-          {Platform.OS === 'ios' ? (
-            <Text style={styles.instructions}>
-              Press Cmd+R to reload,{'\n'}
-              Cmd+D or shake for dev menu
-            </Text>
-          ) : (
-            <Text style={styles.instructions}>
-              Double tap R on your keyboard to reload,{'\n'}
-              Cmd+M or shake for dev menu
-            </Text>
-          )}
-          <View style={styles.modules}>
-            <Text style={styles.modulesHeader}>The following Firebase modules are pre-installed:</Text>
-            {firebase.admob.nativeModuleExists && <Text style={styles.module}>admob()</Text>}
-            {firebase.analytics.nativeModuleExists && <Text style={styles.module}>analytics()</Text>}
-            {firebase.auth.nativeModuleExists && <Text style={styles.module}>auth()</Text>}
-            {firebase.config.nativeModuleExists && <Text style={styles.module}>config()</Text>}
-            {firebase.crashlytics.nativeModuleExists && <Text style={styles.module}>crashlytics()</Text>}
-            {firebase.database.nativeModuleExists && <Text style={styles.module}>database()</Text>}
-            {firebase.firestore.nativeModuleExists && <Text style={styles.module}>firestore()</Text>}
-            {firebase.functions.nativeModuleExists && <Text style={styles.module}>functions()</Text>}
-            {firebase.iid.nativeModuleExists && <Text style={styles.module}>iid()</Text>}
-            {firebase.links.nativeModuleExists && <Text style={styles.module}>links()</Text>}
-            {firebase.messaging.nativeModuleExists && <Text style={styles.module}>messaging()</Text>}
-            {firebase.notifications.nativeModuleExists && <Text style={styles.module}>notifications()</Text>}
-            {firebase.perf.nativeModuleExists && <Text style={styles.module}>perf()</Text>}
-            {firebase.storage.nativeModuleExists && <Text style={styles.module}>storage()</Text>}
-          </View>
-        </View>
-      </ScrollView>
+      <View style={styles.container}>
+        {!user ? <LoginContainer /> : <AppContainer />}
+      </View>
     );
   }
 }
 
+const AppContainer = createAppContainer(AppSwitchNavigator);
+const LoginContainer = createAppContainer(LoginSwitchNavigator);
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
+    justifyContent: "center",
+    // paddingTop: Constants.statusBarHeight,
+    backgroundColor: "#ecf0f1",
+    padding: 8
   },
-  logo: {
-    height: 120,
-    marginBottom: 16,
-    marginTop: 64,
-    padding: 10,
-    width: 135,
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
-  modules: {
-    margin: 20,
-  },
-  modulesHeader: {
-    fontSize: 16,
-    marginBottom: 8,
-  },
-  module: {
-    fontSize: 14,
-    marginTop: 4,
-    textAlign: 'center',
-  }
+
 });
