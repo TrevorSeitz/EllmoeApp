@@ -17,7 +17,7 @@ import {
 // import * as Permissions from 'expo-permissions'
 // import * as Location from 'expo-location'
 // import Constants from 'expo-constants'
-import { MapView, PROVIDER_GOOGLE, Marker } from 'react-native-maps'
+import MapView, { PROVIDER_GOOGLE, Marker } from 'react-native-maps'
 import * as Icon from 'react-native-vector-icons'
 // import { AsyncStorage } from 'react-native-community/async-storage'
 
