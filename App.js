@@ -1,7 +1,13 @@
 import React from 'react';
-import { StyleSheet, Platform, Image, Text, View, ScrollView } from 'react-native';
-
+import { StyleSheet, Platform, Image, Text, View, ScrollView, Button } from 'react-native';
+import { createAppContainer } from "react-navigation";
+import ApiKeys from "./constants/ApiKeys";
 import firebase from 'react-native-firebase';
+// Components
+import GetCurrentLocation from './components/GetCurrentLocation'
+// Navigators
+import LoginSwitchNavigator from "./navigation/switches/LoginSwitchNavigator";
+import AppSwitchNavigator from "./navigation/switches/AppSwitchNavigator";
 
 export default class App extends React.Component {
   constructor() {
