@@ -1,6 +1,6 @@
 import React from "react";
 import { createStackNavigator } from "react-navigation";
-import * as Icon from '@expo/vector-icons'
+import * as Icon from 'react-native-vector-icons'
 
 import EditLocationScreen from "../screens/EditLocationScreen";
 import EditAdditionalPhotosScreen from "../screens/EditAdditionalPhotosScreen";

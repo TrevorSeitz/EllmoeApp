@@ -7,7 +7,7 @@ import {
   TouchableOpacity
 } from "react-native";
 import { ScreenOrientation } from "expo";
-import * as Icon from '@expo/vector-icons'
+import * as Icon from 'react-native-vector-icons'
 import * as firebase from 'react-native-firebase';
 
 export default class AdditionalPhotoGallery extends React.Component {

@@ -8,14 +8,17 @@ import {
   StyleSheet,
   AsyncStorage,
   Image,
-  TouchableOpacity
+  TouchableOpacity,
+  Permissions,
+  Location,
+  Constants
 } from "react-native";
-import { Marker } from "expo";
-import * as Permissions from 'expo-permissions'
-import * as Location from 'expo-location'
-import Constants from 'expo-constants'
-import MapView, { PROVIDER_GOOGLE } from 'react-native-maps'
-import * as Icon from '@expo/vector-icons'
+// import { Marker } from "expo";
+// import * as Permissions from 'expo-permissions'
+// import * as Location from 'expo-location'
+// import Constants from 'expo-constants'
+import { MapView, PROVIDER_GOOGLE, Marker } from 'react-native-maps'
+import * as Icon from 'react-native-vector-icons'
 // import { AsyncStorage } from 'react-native-community/async-storage'
 
 import GetCurrentLocation from '../components/GetCurrentLocation'

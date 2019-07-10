@@ -1,7 +1,7 @@
 import React from "react";
 import {Button} from 'react-native'
 import { createStackNavigator } from "react-navigation";
-import * as Icon from '@expo/vector-icons'
+import * as Icon from 'react-native-vector-icons'
 
 import AddLocationScreen from "../screens/AddLocationScreen";
 
