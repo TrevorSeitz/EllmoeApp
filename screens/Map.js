@@ -1,6 +1,6 @@
 import React from "react";
 import * as firebase from 'react-native-firebase';
-// import firestore from "firebase/firestore";
+// //import firestore from "firebase/firestore";
 import {
   Platform,
   Text,

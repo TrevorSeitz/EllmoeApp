@@ -1,7 +1,7 @@
 import React from "react";
 import { Image, Alert } from "react-native";
 import * as firebase from 'react-native-firebase';
-import firestore from "firebase/firestore";
+//import firestore from "firebase/firestore";
 
 export default class SaveMainPhoto extends React.Component {
   constructor(props) {

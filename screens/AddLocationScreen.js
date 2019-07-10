@@ -8,17 +8,22 @@ import {
   TouchableOpacity,
   Alert,
   Text,
-  AsyncStorage
+  AsyncStorage,
+  Font,
+  MediaLibrary,
+  ImagePicker,
+  Permissions,
+  Location
 } from "react-native";
 import { TextInput } from "react-native-paper";
 import { Button } from "react-native-elements";
 import * as firebase from 'react-native-firebase';
-import firestore from "firebase/firestore";
-import { Font } from "expo";
-import * as MediaLibrary from 'expo-media-library'
-import * as ImagePicker from 'expo-image-picker'
-import * as Permissions from 'expo-permissions'
-import * as Location from 'expo-location'
+//import firestore from "firebase/firestore";
+// import { Font } from "expo";
+// import * as MediaLibrary from 'expo-media-library'
+// import * as ImagePicker from 'expo-image-picker'
+// import * as Permissions from 'expo-permissions'
+// import * as Location from 'expo-location'
 import ImageBrowser from "./ImageBrowser";
 import SaveMainPhoto from "../components/SaveMainPhoto";
 

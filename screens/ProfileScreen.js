@@ -13,7 +13,7 @@ import {
 import { TextInput } from "react-native-paper";
 import { Button } from "react-native-elements";
 import * as firebase from 'react-native-firebase';
-import firestore from "firebase/firestore";
+//import firestore from "firebase/firestore";
 import { Font } from "expo";
 import * as MediaLibrary from 'expo-media-library'
 import * as ImagePicker from 'expo-image-picker'
