@@ -20,8 +20,14 @@ target 'Ellmoe' do
   pod 'Firebase/RemoteConfig', '~> 6.3.0'
   pod 'Firebase/Storage', '~> 6.3.0'
   pod 'Firebase/Performance', '~> 6.3.0'
+<<<<<<< HEAD
   # pod 'Fabric', '~> 1.10.2'
+=======
+  pod 'Fabric', '~> 1.10.2'
+>>>>>>> 195b2a3af062a70d78801e4342b2c496f766a55b
   pod 'Crashlytics', '~> 3.13.2'
+
+  pod 'GoogleMaps'
 
   pod 'React',
     :path => "../node_modules/react-native",
