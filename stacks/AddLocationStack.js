@@ -1,7 +1,7 @@
 import React from "react";
 import {Button} from 'react-native'
 import { createStackNavigator } from "react-navigation";
-import * as Icon from 'react-native-vector-icons'
+import Icon from 'react-native-vector-icons/Ionicons'
 
 import AddLocationScreen from "../screens/AddLocationScreen";
 
@@ -13,7 +13,7 @@ const AddLocationStack = createStackNavigator(
         return {
           headerTitle: "Add New Location",
           headerLeft: (
-            <Icon.Ionicons
+            <Icon
               style={{ paddingLeft: 10 }}
               onPress={() => navigation.openDrawer()}
               name="md-menu"

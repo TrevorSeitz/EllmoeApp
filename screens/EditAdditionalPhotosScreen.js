@@ -14,6 +14,8 @@ import {
 // import { FileSystem } from "expo";
 import { Button } from "react-native-elements";
 import * as firebase from 'react-native-firebase';
+import { AsyncStorage } from 'react-native-community/async-storage'
+//  Files
 import ImageTile from "./ImageTile";
 import AdditionalPhotosTile from "./AdditionalPhotosTile";
 import AdditionalImageBrowser from "./AdditionalImageBrowser";

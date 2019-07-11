@@ -13,7 +13,7 @@ import {
   Location
 } from "react-native";
 import { Button } from "react-native-elements";
-// import * as Location from 'expo-location'
+import { AsyncStorage } from 'react-native-community/async-storage'
 import ImageTile from "./ImageTile";
 import * as firebase from 'react-native-firebase';
 

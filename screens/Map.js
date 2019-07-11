@@ -18,8 +18,8 @@ import {
 // import * as Location from 'expo-location'
 // import Constants from 'expo-constants'
 import MapView, { PROVIDER_GOOGLE, Marker } from 'react-native-maps'
-import * as Icon from 'react-native-vector-icons'
-// import { AsyncStorage } from 'react-native-community/async-storage'
+import Icon from 'react-native-vector-icons/Ionicons'
+import { AsyncStorage } from 'react-native-community/async-storage'
 
 import GetCurrentLocation from '../components/GetCurrentLocation'
 
@@ -269,5 +269,5 @@ const styles = StyleSheet.create({
 //   style={styles.touchableArea}
 //   onPress={this.getCurrentPosition}
 // >
-//   <Icon.Ionicons name="md-locate" style={styles.button} />
+//   <Icon name="md-locate" style={styles.button} />
 // </TouchableOpacity>

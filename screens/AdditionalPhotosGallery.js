@@ -8,7 +8,7 @@ import {
   ScreenOrientation
 } from "react-native";
 // import { ScreenOrientation } from "expo";
-import * as Icon from 'react-native-vector-icons'
+import Icon from 'react-native-vector-icons/Ionicons'
 import * as firebase from 'react-native-firebase';
 
 export default class AdditionalPhotoGallery extends React.Component {
@@ -68,13 +68,13 @@ export default class AdditionalPhotoGallery extends React.Component {
           style={styles.touchableAreaLeft}
           onPress={this.leftArrow}
         >
-          <Icon.Ionicons name="ios-arrow-dropleft" style={styles.leftButton} />
+          <Icon name="ios-arrow-dropleft" style={styles.leftButton} />
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.touchableAreaRight}
           onPress={this.rightArrow}
         >
-          <Icon.Ionicons
+          <Icon
             name="ios-arrow-dropright"
             style={styles.rightButton}
           />

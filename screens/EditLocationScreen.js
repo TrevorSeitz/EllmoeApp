@@ -11,6 +11,7 @@ import {
 import { TextInput } from "react-native-paper";
 import { Text, Button } from "react-native-elements";
 import * as firebase from 'react-native-firebase';
+import { AsyncStorage } from 'react-native-community/async-storage'
 
 export default class EditLocationScreen extends React.Component {
   static navigationOptions = {

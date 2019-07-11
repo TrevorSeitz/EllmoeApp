@@ -8,6 +8,7 @@ import {
   AsyncStorage
 } from "react-native";
 import * as firebase from 'react-native-firebase';
+import { AsyncStorage } from 'react-native-community/async-storage'
 
 export default class LoginScreen extends React.Component {
   state = {

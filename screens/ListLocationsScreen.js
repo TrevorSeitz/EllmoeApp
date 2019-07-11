@@ -9,6 +9,7 @@ import {
 } from "react-native";
 import { ListItem, Avatar } from "react-native-elements";
 import * as firebase from 'react-native-firebase';
+import { AsyncStorage } from 'react-native-community/async-storage'
 //import firestore from "firebase/firestore";
 // import { Font } from "expo";
 

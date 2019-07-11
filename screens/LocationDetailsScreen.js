@@ -3,15 +3,14 @@ import {
   Alert,
   StyleSheet,
   ScrollView,
-  AsyncStorage,
   ActivityIndicator,
   View,
   Image
 } from "react-native";
 import { List, Text, Card, Button } from "react-native-elements";
-import * as firebase from 'react-native-firebase';import { StackActions } from 'react-navigation';
-
-// import { AsyncStorage } from 'react-native-community/async-storage'
+import * as firebase from 'react-native-firebase';
+import { StackActions } from 'react-navigation';
+import { AsyncStorage } from 'react-native-community/async-storage'
 
 export default class LocationDetailsScreen extends React.Component {
   static navigationOptions = {
