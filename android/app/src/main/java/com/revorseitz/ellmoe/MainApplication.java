@@ -3,6 +3,15 @@ package com.revorseitz.ellmoe;
 import android.support.multidex.MultiDexApplication;
 
 import com.facebook.react.ReactApplication;
+import com.oblador.vectoricons.VectorIconsPackage;
+import com.airbnb.android.react.maps.MapsPackage;
+import com.swmansion.gesturehandler.react.RNGestureHandlerPackage;
+import io.invertase.firebase.RNFirebasePackage;
+import io.invertase.firebase.storage.ReactNativeFirebaseStoragePackage;
+import io.invertase.firebase.firestore.ReactNativeFirebaseFirestorePackage;
+import io.invertase.firebase.auth.ReactNativeFirebaseAuthPackage;
+import io.invertase.firebase.ReactNativeFirebaseAppPackage;
+import com.reactnativecommunity.asyncstorage.AsyncStoragePackage;
 import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
 import com.facebook.react.shell.MainReactPackage;
@@ -40,6 +49,15 @@ public class MainApplication extends MultiDexApplication implements ReactApplica
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
         new MainReactPackage(),
+            new VectorIconsPackage(),
+            new MapsPackage(),
+            new RNGestureHandlerPackage(),
+            new RNFirebasePackage(),
+            new ReactNativeFirebaseStoragePackage(),
+            new ReactNativeFirebaseFirestorePackage(),
+            new ReactNativeFirebaseAuthPackage(),
+            new ReactNativeFirebaseAppPackage(),
+            new AsyncStoragePackage(),
         new RNFirebasePackage(),
         // add/remove these packages as appropriate
         new RNFirebaseAdMobPackage(),

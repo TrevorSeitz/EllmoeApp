@@ -13,9 +13,10 @@ import {
   Location
 } from "react-native";
 import { Button } from "react-native-elements";
-import { AsyncStorage } from 'react-native-community/async-storage'
+// import { AsyncStorage } from 'react-native-community/async-storage'
 import ImageTile from "./ImageTile";
 import * as firebase from 'react-native-firebase';
+import * as firestore from '@react-native-firebase/firestore';
 
 const { width } = Dimensions.get("window");
 
@@ -171,8 +172,9 @@ export default class AdditionalImageBrowser extends React.Component {
   saveToFirestore = async () => {
     var promises = [];
     const id = this.state.key.replace(/"/g, "");
-    const updateRef = firebase
-      .firestore()
+    // const updateRef = firebase
+    //   .firestore()
+    const updateRef = firestore
       .collection("locations")
       .doc(id);
     promises.push(

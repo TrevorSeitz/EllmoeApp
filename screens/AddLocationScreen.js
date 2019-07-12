@@ -18,7 +18,8 @@ import {
 import { TextInput } from "react-native-paper";
 import { Button } from "react-native-elements";
 import * as firebase from 'react-native-firebase';
-import { AsyncStorage } from 'react-native-community/async-storage'
+import * as firestore from '@react-native-firebase/firestore';
+// import { AsyncStorage } from 'react-native-community/async-storage'
 //import firestore from "firebase/firestore";
 // import { Font } from "expo";
 // import * as MediaLibrary from 'expo-media-library'
@@ -49,7 +50,8 @@ export default class AddLocationScreen extends React.Component {
       imageBrowserOpen: false,
       isLoading: false
     };
-    this.ref = firebase.firestore().collection("locations");
+    // this.ref = firebase.firestore().collection("locations");
+    this.ref = firestore.collection("locations");
     var storage = firebase.storage();
     var storageRef = storage.ref();
   }

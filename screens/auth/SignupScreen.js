@@ -9,7 +9,8 @@ import {
   AsyncStorage
 } from "react-native";
 import * as firebase from 'react-native-firebase';
-import { AsyncStorage } from 'react-native-community/async-storage'
+import * as firestore from '@react-native-firebase/firestore';
+// import { AsyncStorage } from 'react-native-community/async-storage'
 
 export default class SignupScreen extends React.Component {
   constructor(props) {
@@ -35,8 +36,9 @@ export default class SignupScreen extends React.Component {
       .createUserWithEmailAndPassword(email, password)
       .then(user => (user = user.user))
       .then(user => {
-        return firebase
-          .firestore()
+        // return firebase
+        //   .firestore()
+        return firestore
           .collection("users")
           .doc(user.uid)
           .set({

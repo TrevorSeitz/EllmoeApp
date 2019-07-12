@@ -3,7 +3,7 @@ import { StyleSheet, Platform, Image, Text, View, ScrollView, Button, Constants 
 import { createAppContainer } from "react-navigation";
 import ApiKeys from "./constants/ApiKeys";
 import firebase from 'react-native-firebase';
-import { AsyncStorage } from 'react-native-community/async-storage'
+// import { AsyncStorage } from 'react-native-community/async-storage'
 // Components
 import GetCurrentLocation from './components/GetCurrentLocation'
 // Navigators

@@ -3,7 +3,7 @@ import React from "react";
 // import * as Location from 'expo-location'
 // import Constants from 'expo-constants'
 import { Location, Constants, Permissions } from 'react-native'
-import { AsyncStorage } from 'react-native-community/async-storage'
+// import { AsyncStorage } from 'react-native-community/async-storage'
 
  const GetCurrentLocation = async () => {
   // let { status } = await Permissions.askAsync(Permissions.LOCATION);

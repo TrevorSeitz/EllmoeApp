@@ -11,7 +11,8 @@ import {
 import { TextInput } from "react-native-paper";
 import { Text, Button } from "react-native-elements";
 import * as firebase from 'react-native-firebase';
-import { AsyncStorage } from 'react-native-community/async-storage'
+import * as firestore from '@react-native-firebase/firestore';
+// import { AsyncStorage } from 'react-native-community/async-storage'
 
 export default class EditLocationScreen extends React.Component {
   static navigationOptions = {
@@ -29,8 +30,9 @@ export default class EditLocationScreen extends React.Component {
 
   componentDidMount() {
     const { navigation } = this.props;
-    firebase
-      .firestore()
+    // firebase
+    //   .firestore()
+    firestore
       .collection("locations")
       .doc(JSON.parse(navigation.getParam("key")))
       .get()
@@ -71,8 +73,9 @@ export default class EditLocationScreen extends React.Component {
     });
     const id = this.state.key.replace(/"/g, "");
     const { navigation } = this.props;
-    firebase
-      .firestore()
+    // firebase
+    //   .firestore()
+    firestore
       .collection("locations")
       .doc(id)
       .set({

@@ -1,6 +1,6 @@
 import React from "react";
 import { Text, View, StyleSheet } from "react-native";
-import { AsyncStorage } from 'react-native-community/async-storage'
+// import { AsyncStorage } from 'react-native-community/async-storage'
 import Map from "./Map";
 
 export default class HomeScreen extends React.Component {

@@ -11,6 +11,7 @@ import { Button } from "react-native-elements";
 import ImageTile from "./ImageTile";
 import ShowAdditionalPhotosTile from "./ShowAdditionalPhotosTile";
 import * as firebase from 'react-native-firebase';
+import * as firestore from '@react-native-firebase/firestore';
 import AdditionalImageBrowser from "./AdditionalImageBrowser";
 import SaveMainPhoto from "../components/SaveMainPhoto";
 
@@ -56,8 +57,9 @@ export default class AdditionalPhotosScreen extends React.Component {
 
   getPhotos = () => {
     const { navigation } = this.props;
-    firebase
-      .firestore()
+    // firebase
+    //   .firestore()
+    firestore
       .collection("locations")
       .doc(JSON.parse(navigation.getParam("key")))
       .get()

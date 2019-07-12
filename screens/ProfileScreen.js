@@ -19,7 +19,8 @@ import {
 import { TextInput } from "react-native-paper";
 import { Button } from "react-native-elements";
 import * as firebase from 'react-native-firebase';
-import { AsyncStorage } from 'react-native-community/async-storage'
+import * as firestore from '@react-native-firebase/firestore';
+// import { AsyncStorage } from 'react-native-community/async-storage'
 //import firestore from "firebase/firestore";
 // import { Font } from "expo";
 // import * as MediaLibrary from 'expo-media-library'
@@ -47,7 +48,8 @@ export default class ProfileScreen extends React.Component {
       isLoading: false
     };
     this._retrieveData();
-    this.ref = firebase.firestore().collection("users");
+    // this.ref = firebase.firestore().collection("users");
+    this.ref = firestore.collection("users");
   }
 
   _retrieveData = async () => {

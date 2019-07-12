@@ -1,5 +1,6 @@
 import React from "react";
 import * as firebase from 'react-native-firebase';
+import * as firestore from '@react-native-firebase/firestore';
 // //import firestore from "firebase/firestore";
 import {
   Platform,
@@ -19,7 +20,7 @@ import {
 // import Constants from 'expo-constants'
 import MapView, { PROVIDER_GOOGLE, Marker } from 'react-native-maps'
 import Icon from 'react-native-vector-icons/Ionicons'
-import { AsyncStorage } from 'react-native-community/async-storage'
+// import { AsyncStorage } from 'react-native-community/async-storage'
 
 import GetCurrentLocation from '../components/GetCurrentLocation'
 
@@ -39,7 +40,8 @@ export default class Map extends React.Component {
     this.unsubscribe = null;
   }
 
-  ref = firebase.firestore().collection("locations");
+  // ref = firebase.firestore().collection("locations");
+    ref = firestore.collection("locations");
 
   componentWillMount() {
     if (Platform.OS === "android" && !Constants.isDevice) {

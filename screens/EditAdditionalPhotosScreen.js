@@ -14,7 +14,8 @@ import {
 // import { FileSystem } from "expo";
 import { Button } from "react-native-elements";
 import * as firebase from 'react-native-firebase';
-import { AsyncStorage } from 'react-native-community/async-storage'
+import * as firestore from '@react-native-firebase/firestore';
+// import { AsyncStorage } from 'react-native-community/async-storage'
 //  Files
 import ImageTile from "./ImageTile";
 import AdditionalPhotosTile from "./AdditionalPhotosTile";
@@ -58,8 +59,9 @@ export default class EditAdditionalPhotosScreen extends Component {
   getPhotos = () => {
     const { navigation } = this.props;
     const id = this.state.key.replace(/"/g, "");
-    firebase
-      .firestore()
+    // firebase
+    //   .firestore()
+    firestore
       .collection("locations")
       .doc(id)
       .get()
@@ -121,8 +123,9 @@ export default class EditAdditionalPhotosScreen extends Component {
   // This should be used both for delete and add
   deleteFromDB = () => {
     const id = this.state.key.replace(/"/g, "");
-    firebase
-      .firestore()
+    // firebase
+    //   .firestore()
+    firestore
       .collection("locations")
       .doc(id)
       .update({

@@ -2,25 +2,6 @@
 platform :ios, '11.2'
 
 target 'Ellmoe' do
-  # Pods for Ellmoe
-  # Uncomment the next line if you're using Swift or would like to use dynamic frameworks
-  # use_frameworks!
-
-  # Required by RNFirebase
-  pod 'Firebase/Core', '~> 6.3.0'
-
-  # [OPTIONAL PODS] - comment out pods for firebase products you won't be using.
-  # pod 'Firebase/AdMob', '~> 6.3.0'
-  pod 'Firebase/Auth', '~> 6.3.0'
-  pod 'Firebase/Database', '~> 6.3.0'
-  pod 'Firebase/Functions', '~> 6.3.0'
-  pod 'Firebase/DynamicLinks', '~> 6.3.0'
-  pod 'Firebase/Firestore', '~> 6.3.0'
-  pod 'Firebase/Messaging', '~> 6.3.0'
-  pod 'Firebase/RemoteConfig', '~> 6.3.0'
-  pod 'Firebase/Storage', '~> 6.3.0'
-  pod 'Firebase/Performance', '~> 6.3.0'
-  # pod 'Fabric', '~> 1.10.2'
   pod 'Crashlytics', '~> 3.13.2'
 
   pod 'GoogleMaps'
@@ -56,17 +37,32 @@ target 'Ellmoe' do
     :podspec => "../node_modules/react-native/third-party-podspecs/glog.podspec",
     :inhibit_warnings => true
 
+
+  pod 'RNFBApp', :path => '../node_modules/@react-native-firebase/app'
+
+  # pod 'RNFBAuth', :path => '../node_modules/@react-native-firebase/auth'
+
+  pod 'RNFBFirestore', :path => '../node_modules/@react-native-firebase/firestore'
+
+  pod 'RNFBStorage', :path => '../node_modules/@react-native-firebase/storage'
+
+  pod 'RNFirebase', :path => '../node_modules/react-native-firebase/ios'
+
+  pod 'react-native-maps', :path => '../node_modules/react-native-maps'
+
+  pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons'
+
 end
 
-target 'Ellmoe-tvOS' do
-  # Uncomment the next line if you're using Swift or would like to use dynamic frameworks
-  # use_frameworks!
-
-  # Pods for Ellmoe-tvOS
-
-  target 'Ellmoe-tvOSTests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
-
-end
+# target 'Ellmoe-tvOS' do
+#   # Uncomment the next line if you're using Swift or would like to use dynamic frameworks
+#   # use_frameworks!
+#
+#   # Pods for Ellmoe-tvOS
+#
+#   target 'Ellmoe-tvOSTests' do
+#     inherit! :search_paths
+#     # Pods for testing
+#   end
+#
+# end

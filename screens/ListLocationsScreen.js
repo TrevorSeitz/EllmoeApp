@@ -9,14 +9,16 @@ import {
 } from "react-native";
 import { ListItem, Avatar } from "react-native-elements";
 import * as firebase from 'react-native-firebase';
-import { AsyncStorage } from 'react-native-community/async-storage'
+import * as firestore from '@react-native-firebase/firestore';
+// import { AsyncStorage } from 'react-native-community/async-storage'
 //import firestore from "firebase/firestore";
 // import { Font } from "expo";
 
 export default class ListLocationsScreen extends React.Component {
   constructor() {
     super();
-    this.ref = firebase.firestore().collection("locations");
+    // this.ref = firebase.firestore().collection("locations");
+    this.ref = firestore.collection("locations");
     this.unsubscribe = null;
     this.state = {
       isLoading: true,

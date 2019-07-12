@@ -9,8 +9,9 @@ import {
 } from "react-native";
 import { List, Text, Card, Button } from "react-native-elements";
 import * as firebase from 'react-native-firebase';
+import * as firestore from '@react-native-firebase/firestore';
 import { StackActions } from 'react-navigation';
-import { AsyncStorage } from 'react-native-community/async-storage'
+// import { AsyncStorage } from 'react-native-community/async-storage'
 
 export default class LocationDetailsScreen extends React.Component {
   static navigationOptions = {
@@ -46,8 +47,9 @@ export default class LocationDetailsScreen extends React.Component {
 
   componentDidMount() {
     const { navigation } = this.props;
-    firebase
-      .firestore()
+    // firebase
+    //   .firestore()
+    firestore
       .collection("locations")
       .doc(JSON.parse(navigation.getParam("key")))
       .get()

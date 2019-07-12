@@ -1,4 +1,5 @@
 import firebase from 'react-native-firebase';
+import * as firestore from '@react-native-firebase/firestore';
 // import firestore from "firebase/react-native-firebase";
 
 const settings = {};
@@ -15,6 +16,7 @@ const firebaseConfig = {
 
 // firebase.initializeApp(firebaseConfig);
 
-firebase.firestore().settings(settings);
+// firebase.firestore().settings(settings);
+// firestore.settings(settings);
 
 export default firebase;
